@@ -63,6 +63,12 @@ func main() {
 		fmt.Println("err and driver.ErrBadConn are NOT Equal")
 	}
 
+	if errors.Is(err, driver.ErrBadConn) {
+		fmt.Println("errors.Is/ err and driver.ErrBadConn are Equal")
+	} else {
+		fmt.Println("errors.Is/ err and driver.ErrBadConn are NOT Equal")
+	}
+
 	if err.Error() == driver.ErrBadConn.Error() {
 		fmt.Println("err and driver.ErrBadConn strings are Equal")
 	} else {
